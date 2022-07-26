@@ -1,3 +1,3 @@
-# AlienChat
+Aquí puedes ver el código fuente de [AlienChat](https://play.google.com/store/apps/details?id=com.alienchat), si quieres ver el proyecto en funcionamiento, descarga la app para Android desde este [enlace](https://play.google.com/store/apps/details?id=com.alienchat)
 
-Aquí podrás ver el código fuente del proyecto y ver cómo funciona, pido disculpas de ante mando, ya que el código no está comentado.
+Pido disculpas de ante mando, ya que el código no está comentado.
