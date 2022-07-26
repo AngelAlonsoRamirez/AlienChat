@@ -1,0 +1,110 @@
+<html><head>
+  <title>AlienChat</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src='file:///android_asset/app.js'></script>
+  
+  <script>var permisos=""</script>
+  <script src='/sdcard/Android/data/com.alienchat/files/Alienchat/permisos.txt'></script>
+  <script src='/sdcard/Android/data/com.smartphoneremote.androidscriptfree/files/AlienChat/permisos.txt'></script>
+  <link rel="stylesheet" type="text/css" href="estilo.css">
+  <script src='script.js'></script>
+
+    <script>
+    function Start() {
+        if (permisos === "") {
+            var alienpoin = ""
+            var d = new Date();
+            var codigo = d.getDate() + d.getDay() + d.getFullYear() + d.getHours() + d.getMinutes() + d.getSeconds() + d.getTime()                
+            var url = "/sdcard/AlienChat/"
+            app.MakeFolder( url );
+            app.WriteFile( url+'/.nomedia', '"' );
+            app.WriteFile( url+'/permisos.txt', 'permisos="yes"' );
+            var tuto = app.Alert( "Para comenzar, crearemos un avatar.", "¡Gracias por descargar AlienChat!", "", 180 );
+            
+            lay = app.CreateLayout( "linear", "VCenter,FillXY" );	
+            web = app.CreateWebView( 1.0, 1.0 );
+            web.LoadUrl( "ajustes.html" );
+            lay.AddChild( web );
+            app.AddLayout( lay );
+            }}
+        
+function informacion() {
+      window.open("informacion.html")
+    }
+
+function creartemporal() {
+      window.open("crear-chatt.html")
+      }
+      
+function unirsetemporal() {
+      window.open("unirse-chatt.html")
+      }
+      
+function crearpermanente() {
+      window.open("crear-chatp.html")
+      }
+      
+function unirsepermanente() {
+      window.open("unirse-chatp.html")
+      }
+      
+function ajustes() {
+      window.open("ajustes.html")
+      }
+      
+      var mensaje="Ya puedes descargar totalmente gratuita la app AlienChat desde este enlace http://alien-project.000webhostapp.com"
+      function whatsapp() {
+          app.OpenUrl( "https://api.whatsapp.com/send?text=" + mensaje);
+          }
+          
+      function facebook() {
+          app.OpenUrl( "http://www.facebook.com/sharer.php?u=http://alien-project.000webhostapp.com");
+          }
+
+      function twitter() {
+          app.OpenUrl("http://twitter.com/home?status=" + mensaje);
+          }
+    </script>
+</head>
+
+<body>
+<br>
+
+<center>
+<h1>AlienChat</h1>
+</center>
+
+<br>
+<table>
+		<tr onclick="creartemporal()">
+		<th><dato2>Crear un chat temporal</dato2></fondo></th>
+		</tr>
+
+
+		<tr onclick="unirsetemporal()">
+		<th><dato2>Unirse a un chat temporal</dato2></fondo></th>
+		</tr>
+
+
+		<tr onclick="crearpermanente()">
+		<th><dato2>Crear un chat permanente</dato2></fondo></th>
+		</tr>
+
+
+		<tr onclick="unirsepermanente()">
+		<th><dato2>Unirse a un chat permanente</dato2></fondo></th>
+		</tr>
+
+
+		<tr onclick="informacion()">
+		<th><dato2>Informacion</dato2></fondo></th>
+		</tr>
+
+
+		<tr onclick="ajustes()">
+		<th><dato2>Ajustes</dato2></fondo></th>
+		</tr>
+</table>
+
+<body onload="Start()"></html>

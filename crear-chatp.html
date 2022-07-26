@@ -1,0 +1,173 @@
+<html><head>
+  <meta charset="UTF-8">
+  <script>
+  var usuario = ""
+  </script>
+  <script src='/sdcard/Android/data/com.alienchat/files/Alienchat/user.txt'></script>
+  <script src='/sdcard/Android/data/com.smartphoneremote.androidscriptfree/files/AlienChat/user.txt'></script>
+
+<title>Crear Chat</title>
+  <script src="https://use.fontawesome.com/e63bef178e.js"></script>
+  <script src='file:///android_asset/app.js'></script>
+  <script src='stickers.js'></script>
+  <script src='video.js'></script>
+  <script src='web.js'></script>
+  <script src='codigo-per.js'></script>
+  <script src='gif.js'></script>
+  <link rel="stylesheet" href="estilo.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="chat-container">
+  <ul class="chat-feed">
+
+<div id="todo">
+<input type="image" id="logos" src="Img/home.png" onclick="location.href='index.html'" name="submit" width="50" height="50"/>
+<input type="image" id="logos" src="Img/videos.png" onclick="video()" name="submit" width="50" height="50"/>
+<input type="image" id="logos" src="Img/web.png" onclick="web()" name="submit" width="50" height="50"/>
+<input type="image" id="logos" src="Img/codigo.png" onclick="numero()" name="submit" width="50" height="50"/>
+</div>
+
+  </ul>
+<div id="arriba">
+      <textarea placeholder="Escríbe un mensaje..." id='message'></textarea>
+
+<div class="seleccion" id="memes" Onclick="">
+  <div class="options">
+  <input type="radio" id="pictograma" value="2">
+  <form name=imagenes><br><br>
+<label><input type="Radio" name="pictograma" OnClick='imagen1()'><img src="Img/m1.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" OnClick='imagen2()'><img src="Img/m2.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" OnClick='imagen3()'><img src="Img/m3.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" OnClick='imagen4()'><img src="Img/m4.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" OnClick='imagen5()'><img src="Img/m5.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" OnClick='imagen6()'><img src="Img/m6.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" OnClick='imagen7()'><img src="Img/m7.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" OnClick='imagen8()'><img src="Img/m8.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" OnClick='imagen9()'><img src="Img/m9.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" OnClick='imagen10()'><img src="Img/m10.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" OnClick='imagen11()'><img src="Img/m11.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" OnClick='imagen12()'><img src="Img/m12.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" OnClick='imagen13()'><img src="Img/m13.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" OnClick='imagen14()'><img src="Img/m14.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" OnClick='imagen15()'><img src="Img/m15.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" OnClick='imagen16()'><img src="Img/m16.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" OnClick='imagen17()'><img src="Img/m17.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" OnClick='imagen18()'><img src="Img/m18.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" OnClick='imagen19()'><img src="Img/m19.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" OnClick='imagen20()'><img src="Img/m20.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" OnClick='imagen21()'><img src="Img/m21.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" OnClick='imagen22()'><img src="Img/m22.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" OnClick='imagen23()'><img src="Img/m23.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" OnClick='imagen24()'><img src="Img/m24.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" OnClick='imagen25()'><img src="Img/m25.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" OnClick='imagen26()'><img src="Img/m26.png" border="0"  width="50" height="50"/></label>
+</div></div>
+
+
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+  
+    <script>
+    var config = {
+    apiKey: "XXXXXXXXXXXXXXXXXXXXXXX",
+    authDomain: "xxxxxxxxxxxxx.firebaseapp.com",
+    databaseURL: "xxxxxxxxxx.firebaseio.com",
+    projectId: "xxxxxxxx",
+    storageBucket: "xxxx.appspot.com",
+    messagingSenderId: "1234567890",
+    appId: "1:00000000000000000000000000000",
+    measurementId: "G-AAAAAAAA"
+        };
+    firebase.initializeApp(config);
+  
+  var servidor="Img"
+
+if (usuario == null) {
+    app.Alert("Tu nombre de usuario no es valido.", "ERROR","", 180 );
+    location.href = "ajustes.html"
+    }
+
+if (usuario == '') {
+    app.Alert("Tu nombre de usuario no es valido.", "ERROR","", 180 );
+    location.href = "ajustes.html"
+    }
+
+const db = firebase.database();
+const chatForm = document.querySelector('form');
+const textBox = document.querySelector('textarea');
+const chats = document.querySelector('ul');
+
+var d = new Date();
+var ramdom = Math.floor(Math.random() * 100*5);
+var codigo = d.getDate() + d.getDay() + d.getFullYear() + d.getHours() + d.getMinutes() + d.getSeconds() + d.getTime() * ramdom
+
+
+var code= d.getDate() + "" + (d.getMonth() +1) + "" + d.getFullYear()
+
+
+var chat = 'ChatPrivado/Permanente/' + "/" + codigo
+const sessionId = usuario
+const bot = '00000000000'
+const chatsRef = db.ref('/' + chat);
+  const mensajeId = Date.now();
+  var d = new Date();
+    var f = new Date();
+  var tiempo = d.getHours() + ":" + d.getMinutes()
+  var fecha = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear() + " <small>" + d.getHours() + ":" + d.getMinutes() + "</small>"
+
+  db.ref(chat + '/' + mensajeId).set({
+    id: bot,
+    mensaje: "<b><img style='border-radius: 6px;' src=\'" + servidor + "/abot.png\'width=\'70px\' height=\'70px\'><i><font color=\'red\'> Alienbot</font></b></i> <br><i>" + fecha + "</i><br>El usuario " + name  + " a creado un chat permanente<br>" + codigo
+  });
+
+function handleSubmit(e) {
+  e.preventDefault();
+  
+  if (!textBox.value) {
+    return;
+  }
+    const mensajeId = Date.now();
+  var d = new Date();
+  var tiempo = d.getDate() + "/" + (d.getMonth() +1) + "/" + d.getFullYear() + " <small>" + d.getHours() + ":" + d.getMinutes() + "</small>"
+
+
+
+textBox.value = textBox.value.replace(/</gi,"");
+textBox.value = textBox.value.replace(/>/gi,"");
+
+
+  db.ref(chat + '/' + mensajeId).set({
+    id: sessionId,
+    mensaje: "<b>" + usuario + "</b> <br><i>" + tiempo + '</i><br>' + textBox.value
+  });
+  
+  textBox.value = '';
+}
+
+chatsRef.on('child_added', handleChildAdded);
+
+function handleChildAdded(data) {
+  const mensajeData = data.val();
+  const li = document.createElement('li');
+  
+
+  if (mensajeData.id !== sessionId) {
+  li.classList.add('other');
+  }
+  
+  chats.appendChild(li);
+  chats.scrollTop = chats.scrollHeight;
+}
+
+textBox.addEventListener('keydown', handleKeyDown);
+
+function handleKeyDown(e) {
+  if (e.which == 13) {
+    handleSubmit(e);
+  }
+}
+</script>
+<body></html>

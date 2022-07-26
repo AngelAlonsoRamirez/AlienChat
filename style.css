@@ -1,0 +1,25 @@
+body {
+    background-image: url("Img/fondousuario.jpg");
+    background-repeat: no-repeat;
+    background-size:  100% 100%;
+    display: flex;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #78FFD8;
+    font-family: 'Open Sans', sans-serif;
+    }
+    
+textarea {
+    height: 50px;
+    width: 100%;
+    font-size: 16px;
+    background-color: #78FFD8;
+    font-family: 'Open Sans', sans-serif;
+    border: none;
+    overflow: auto;
+    outline: none;
+    margin-top:1%;
+    padding-left: 55px;
+    padding-bottom: 60px;
+    }

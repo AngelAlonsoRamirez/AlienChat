@@ -1,0 +1,154 @@
+<html><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src='file:///android_asset/app.js'></script>
+    <link href='Img/AlienChat.png' rel='shortcut icon' type='image/png'>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    
+    
+    
+<script>
+var fichero = "/sdcard/Alienchat"
+
+    function crear(){
+      var i 
+      for (i=0;i<document.imagenes.pictograma.length;i++){ 
+          if (document.imagenes.pictograma[i].checked) 
+          break; 
+          }
+
+  document.bgColor = document.imagenes.pictograma[i].value 
+  var imagen = document.bgColor        
+        
+        var formato = document.getElementById('formato').value;
+        var color = document.getElementById('color').value;
+        var txt = document.getElementById('usuario').value;
+        
+        if (txt==="") {
+            app.Alert("Falta el nombre de usuario.", "ERROR","", 180 );
+            } else {
+txt = txt.replace(/</gi,"");
+txt = txt.replace(/>/gi,"");
+
+                var todo = '<img style="border-radius: 6px;" src="' + imagen + '"width="70px" height="70px">' + formato + '<font color="' + color +'"> ' + txt + '</font></b></i></u></small></big></strike>'
+                app.MakeFolder( fichero );
+                app.WriteFile( fichero+"/user.txt", "usuario='"+todo+"'" + "\n" + 'name="' + ' <font color=#E74C3C>' + txt + '</font> "');
+                app.WriteFile( fichero+"/.nomedia", "" );
+                app.Alert("","¡Usuario creado!", "", 180 );
+                location.href="index.html"}
+                }
+      </script>
+
+<style>
+
+	</style>
+</head> 
+
+<body>
+<br>
+  <a class="boton" href="index.html">Inicio</a>
+  <a class="boton" onclick="crear()">Crear</a>
+
+<br><br><br>
+
+Nick<br>
+<textarea id="usuario"></textarea>
+<br><br>
+
+Color<br>
+<table>
+
+    <select id="color">
+    <option value="black">Negro</option> 
+    <option value="red">Rojo</option> 
+    <option value="blue">Azul</option> 
+    <option value="yellow">Amarillo</option>
+    <option value="green">Verde</option> 
+    <option value="purple">Morado</option> 
+    <option value="gray">Gris</option> 
+    <option value="#00FFF3">Cian</option> 
+    <option value="orange">Naranja</option> 
+    <option value="pink">Rosa</option> 
+</select>
+<br><br>
+
+Formato<br>
+<table>
+    <select id="formato">
+   <option value="">Normal</option> 
+   <option value="<b>">Negrita</option> 
+   <option value="<i>">Cursiva</option> 
+   <option value="<u>">Subrayado</option>
+   <option value="<small>">Pequeño</option> 
+   <option value="<big>">Grande</option> 
+   <option value="<strike>">Tachado</option> 
+</select>
+<br><br>
+
+Avatar<br>
+<table>
+
+<div class="select-sim" id="avatar">
+  <div class="options">
+  <input type="radio" id="pictograma" value="2"><br><br>
+  <form name=imagenes>
+<label><input type="Radio" name="pictograma" value="Img/a0.png"><img src="Img/a0.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="Img/a1.png"><img src="Img/a1.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="Img/a2.png"><img src="Img/a2.png" border="0"  width="50" height="50"/></label>
+<br>
+<label><input type="Radio" name="pictograma" value="Img/a3.png"><img src="Img/a3.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="Img/a4.png"><img src="Img/a4.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="Img/a5.png"><img src="Img/a5.png" border="0"  width="50" height="50"/></label>
+<br>
+<label><input type="Radio" name="pictograma" value="Img/a6.png"><img src="Img/a6.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="Img/a7.png"><img src="Img/a7.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="Img/a8.png"><img src="Img/a8.png" border="0"  width="50" height="50"/></label>
+<br>
+<label><input type="Radio" name="pictograma" value="Img/a9.png"><img src="Img/a9.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="Img/a10.png"><img src="Img/a10.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="Img/a11.png"><img src="Img/a11.png" border="0"  width="50" height="50"/></label>
+<br>
+<label><input type="Radio" name="pictograma" value="Img/a12.png"><img src="Img/a12.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="Img/a13.png"><img src="Img/a13.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="Img/a14.png"><img src="Img/a14.png" border="0"  width="50" height="50"/></label>
+<br>
+<label><input type="Radio" name="pictograma" value="Img/a15.png"><img src="Img/a15.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="Img/a16.png"><img src="Img/a16.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="Img/a17.png"><img src="Img/a17.png" border="0"  width="50" height="50"/></label>
+<br>
+<label><input type="Radio" name="pictograma" value="Img/a18.png"><img src="Img/a18.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="Img/a19.png"><img src="Img/a19.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="Img/a20.png"><img src="Img/a20.png" border="0"  width="50" height="50"/></label>
+<br>
+<label><input type="Radio" name="pictograma" value="Img/a21.png"><img src="Img/a21.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="Img/a22.png"><img src="Img/a22.png" border="0"  width="50" height="50"/></label>
+<label><input type="Radio" name="pictograma" value="Img/a23.png"><img src="Img/a23.png" border="0"  width="50" height="50"/></label>
+<br>
+    </div></div><br><br>
+
+<script>
+      var mensaje="Descargate gratis la nueva app de mensajeria anonima \n\ https://play.google.com/store/apps/details?id=com.alienchat"
+
+function whatsapp() {
+          app.OpenUrl( "https://api.whatsapp.com/send?text=" + mensaje);
+    }
+    
+function facebook() {
+    	app.OpenUrl( "http://www.facebook.com/sharer.php?u=https://play.google.com/store/apps/details?id=com.alienchat");
+        }
+    
+function twitter() {
+    	app.OpenUrl( "http://twitter.com/home?status=" + mensaje);
+        }
+
+</script>
+
+<div id="todo">
+<input type="image" id="logos" src="Img/logo-twitter.png" onclick="twitter()" name="submit">
+<input type="image" id="logos" src="Img/logo-facebook.png" onclick="facebook()" name="submit">
+<input type="image" id="logos" src="Img/logo-whatsapp.png" onclick="whatsapp()" name="submit">
+</div>
+
+<body></html>

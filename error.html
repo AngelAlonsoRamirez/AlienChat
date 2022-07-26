@@ -1,0 +1,84 @@
+<html><head>
+  <title>AlienChat</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src='file:///android_asset/app.js'></script>
+  <script>var permisos=""</script>
+  <script src='file:///sdcard/Android/data/com.alienchat/permisos.txt'></script>
+  <link rel="stylesheet" type="text/css" href="estilo.css">
+  <script src='script.js'></script>
+
+    <script>
+    function Start() {
+        app.Alert("Se a perdido la conexion a internet.", "ERROR","", 180 );
+                
+            var url = "/sdcard/Android/data/com.alienchat/"
+            app.MakeFolder( url );
+            app.WriteFile( url+'/.nomedia', '"' );
+            app.WriteFile( url+'/permisos.txt', 'permisos="yes"' );
+            var tuto = app.Alert( "Para comenzar, crearemos un avatar.", "¡Gracias por descargar AlienChat!", "", 180 );
+
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" );	
+	web = app.CreateWebView( 1.0, 1.0 );
+	web.LoadUrl( "ajustes.html" );
+	lay.AddChild( web );
+	app.AddLayout( lay );
+            }
+        
+function informacion() {
+      window.open("informacion.html")
+    }
+
+function publico() {
+      window.open("publico.html")
+      }
+
+function crear() {
+      window.open("crear-chat.html")
+      }
+      
+function unirse() {
+      window.open("unirse-chat.html")
+      }
+      
+function ajustes() {
+      window.open("ajustes.html")
+      }
+      
+      var mensaje="Ya puedes descargar totalmente gratuita la app AlienChat desde este enlace https://play.google.com/store/apps/details?id=com.alienchat\n\n¿En que consiste?\nEs una app de mensajeria anonima."
+      function whatsapp() {
+          app.OpenUrl( "https://api.whatsapp.com/send?text=" + mensaje);
+          }
+          
+      function facebook() {
+          app.OpenUrl( "http://www.facebook.com/sharer.php?u=https://play.google.com/store/apps/details?id=com.alienchat");
+          }
+
+      function twitter() {
+          app.OpenUrl("http://twitter.com/home?status=" + mensaje);
+          }
+    </script>
+</head>
+
+<body>
+<br>
+<center>
+<span class="login100-form-title p-b-26"><img src="Img/AlienChat.png" border="0" alt="Alien" width="100" height="100">
+<br><br>
+<input type='button' onclick="crear()" class="boton" value='Crear chat' style='width:220px; height:57px'>
+<br><br>
+<input type='button' onclick="unirse()" class="boton" value='Unirse a chat' style='width:220px; height:57px'>
+<br><br>
+<input type='button' onclick="publico()" class='boton' value='Chat Publico' style='width:220px; height:57px'>
+<br><br>
+<input type='button' onclick="informacion()" class='boton' value='Información' style='width:220px; height:57px'>
+<br><br>
+<input type='button' onclick="ajustes()" class='boton' value='Ajustes' style='width:220px; height:57px'>
+
+<div id="todo">
+<input type="image" id="logos" src="Img/logo-twitter.png" onclick="twitter()" name="submit">
+<input type="image" id="logos" src="Img/logo-facebook.png" onclick="facebook()" name="submit">
+<input type="image" id="logos" src="Img/logo-whatsapp.png" onclick="whatsapp()" name="submit">
+</div>
+<body onload="Start()">
+</html>
