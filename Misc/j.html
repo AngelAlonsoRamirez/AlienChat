@@ -1,0 +1,120 @@
+<html><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src='file:///android_asset/app.js'></script>
+  
+<style>
+body {
+    background: #cefff1;
+    color: #333;
+    font: 14px 'Arial',sans-serif;
+    }
+
+.boton{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #cefff1;
+    background-color: #a56cc1;
+    border-radius: 6px;
+    border: 2px solid #ace7ef;
+    left:2px;
+    }
+  
+.boton:hover{
+    color: #a56cc1;
+    background-color: #cefff1;
+    }
+
+.morado {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 5px;
+  background-color: #a56cc1; 
+  color: white; 
+  border: 2px solid #ace7ef;
+}
+
+.morado:hover {
+  background-color: white;
+  color: black;
+}
+</style>
+
+    <script>
+      function bibliaespanol() {
+          var srcFileUrl="https://playshopapk.000webhostapp.com/cache/5467886655443.pdf";
+          var targetDir="/sdcard/Descargas";
+          app.MakeFolder( targetDir )
+          
+          dload = app.CreateDownloader();
+          dload.Download( srcFileUrl, targetDir );
+          alert("La biblia se descargará en formato PDF en \n/sdcard/Descargas")
+          }
+          
+      function bibliaingles() {
+          var srcFileUrl="https://playshopapk.000webhostapp.com/cache/76543678556775.pdf";
+          var targetDir="/sdcard/Descargas";
+          app.MakeFolder( targetDir )
+
+          dload = app.CreateDownloader();
+          dload.Download( srcFileUrl, targetDir );
+          alert("The bible will be downloaded in PDF format at\n/sdcard/Descargas")
+          }
+      
+      function canticoespanol() {
+          var srcFileUrl="https://playshopapk.000webhostapp.com/cache/9087654321456786.pdf";
+          var targetDir="/sdcard/Descargas";
+          app.MakeFolder( targetDir )
+
+          dload = app.CreateDownloader();
+          dload.Download( srcFileUrl, targetDir );
+          alert("El cantico se descargará en formato PDF en \n/sdcard/Descargas")
+          }
+      
+      function canticoingles() {
+          var srcFileUrl="https://playshopapk.000webhostapp.com/cache/432567890765432132456789.pdf";
+          var targetDir="/sdcard/Descargas";
+          app.MakeFolder( targetDir )
+
+          dload = app.CreateDownloader();
+          dload.Download( srcFileUrl, targetDir );
+          alert("The song will be downloaded in PDF format at\n/sdcard/Descargas")
+          }
+    </script>
+</head>
+
+<body>
+<br>
+
+<center>
+<br><br>
+
+<br>
+
+<table style="background: #cefff1">
+<tr>
+    <td colspan="2"><center><h2>BIBLIA/BIBLE</h2></center></td>
+</tr>
+  <tr>
+    <td><input type='button' onclick="bibliaespanol()" class="botton morado" value='ESPAÑOL' style='width:150; height:47'></td>
+    <td><input type='button' onclick="bibliaingles()" class="botton morado" value='ENGLISH' style='width:150; height:47'></td>
+  </tr>
+</table>
+<BR>
+<table style="background: #cefff1">
+<tr>
+    <td colspan="2"><center><h2>CANTICOS/SONGS</h2></center></td>
+</tr>
+  <tr>
+    <td><input type='button' onclick="canticoespanol()" class="botton morado" value='ESPAÑOL' style='width:150; height:47'></td>
+    <td><input type='button' onclick="canticoingles()" class="botton morado" value='ENGLISH' style='width:150; height:47'></td>
+  </tr>
+</table>
+
+<br>
+
+
+
+<body>
+</html>

@@ -2,7 +2,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src='file:///android_asset/app.js'></script>
-    <link href='Img/AlienChat.png' rel='shortcut icon' type='image/png'>
     <link rel="stylesheet" href="estilo.css">
     <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
@@ -29,8 +28,8 @@ var fichero = "/sdcard/Alienchat"
         if (txt==="") {
             app.Alert("Falta el nombre de usuario.", "ERROR","", 180 );
             } else {
-txt = txt.replace(/</gi,"");
-txt = txt.replace(/>/gi,"");
+                txt = txt.replace(/</gi,"");
+                txt = txt.replace(/>/gi,"");
 
                 var todo = '<img style="border-radius: 6px;" src="' + imagen + '"width="70px" height="70px">' + formato + '<font color="' + color +'"> ' + txt + '</font></b></i></u></small></big></strike>'
                 app.MakeFolder( fichero );
@@ -129,14 +128,14 @@ Avatar<br>
     </div></div><br><br>
 
 <script>
-      var mensaje="Descargate gratis la nueva app de mensajeria anonima \n\ https://play.google.com/store/apps/details?id=com.alienchat"
+      var mensaje="Descargate gratis la nueva app de mensajeria anonima \n\ https://github.com/AngelAlonsoRamirez/AlienChat/raw/main/android.apk"
 
 function whatsapp() {
           app.OpenUrl( "https://api.whatsapp.com/send?text=" + mensaje);
     }
     
 function facebook() {
-    	app.OpenUrl( "http://www.facebook.com/sharer.php?u=https://play.google.com/store/apps/details?id=com.alienchat");
+    	app.OpenUrl( "http://www.facebook.com/sharer.php?u=https://github.com/AngelAlonsoRamirez/AlienChat/raw/main/android.apk");
         }
     
 function twitter() {

@@ -6,20 +6,20 @@ body {
     margin: 0;
     height: 100%;
     width: 100%;
-    background-color: #78FFD8;
+    background-color: #58FECE;
     font-family: 'Open Sans', sans-serif;
     }
     
 textarea {
-    height: 50px;
+    height: 30px;
     width: 100%;
     font-size: 16px;
-    background-color: #78FFD8;
+    background-color: #58FECE;
     font-family: 'Open Sans', sans-serif;
     border: none;
     overflow: auto;
     outline: none;
     margin-top:1%;
-    padding-left: 55px;
+    padding-left: 5px;
     padding-bottom: 60px;
     }

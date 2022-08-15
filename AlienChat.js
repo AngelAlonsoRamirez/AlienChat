@@ -1,6 +1,11 @@
+var url="index.html"
+
+app.SetOnError(OnError);
+
+
     theme = app.CreateTheme( "Light" );
     theme.AdjustColor( 35, 0, -10 );
-    theme.SetBackColor( "#78FFD8" );
+    theme.SetBackColor( "#58FECE" );
     theme.SetBtnTextColor( "black" );
     theme.SetButtonOptions( "custom" );
     theme.SetButtonStyle( "white","white",2,"#999999",0,1,"#ff9000" );
@@ -18,8 +23,8 @@
 var color = "#6DE7C3"
 
 function OnStart() {
-    app.SetStatusBarColor( "#78FFD8" );
-    app.SetNavBarColor( "#78FFD8" );
+    app.SetStatusBarColor( "#58FECE" );
+    app.SetNavBarColor( "#58FECE" );
 
     app.PreventScreenLock(true);
 	app.SetOrientation("Portrait");  
@@ -30,16 +35,12 @@ function OnStart() {
     layMain.SetSize( 1, app.IsPortrait()?0.92:0.85 )
     lay.AddChild( layMain );
     
-	var ver = app.GetVersion();
-	app.GA( "create", "UA-1234567890-1" );
-	app.GA( "send", "screenview", 
-	    {"appName":"AlienChat","appVersion":ver,"screenName":"main"});
 
 
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );	
 	web = app.CreateWebView( 1.0, 1.0 );
 	web.SetOnProgress( web_OnProgess );
-	web.LoadUrl( "index.html" );
+	web.LoadUrl( url );
 	lay.AddChild( web );
 	
 	layHoriz = app.CreateLayout( "linear", "Horizontal" );	
@@ -52,7 +53,6 @@ function OnStart() {
 	app.AddDrawer( drawerScroll, "Left", drawerWidth );
 
 
-app.SetOnError(OnError);
 }
 
 function OnError( msg, line, file ) {
@@ -128,18 +128,11 @@ function CreateDrawer() {
     layMenu.AddChild( sep );
     
 	
-    var listItems = "Ajustes::[fa-cogs],Información::[fa-info-circle],Puntuar::[fa-star]";
+    var listItems = "Ajustes::[fa-cogs],Comentar::[fa-github]";
     lstMenu2 = app.CreateList( listItems, drawerWidth, -1, "Menu,Expand" );
     lstMenu2.SetColumnWidths( -1, 0.35, 0.18 );
     lstMenu2.SetOnTouch( lstMenu_OnTouch );
     layMenu.AddChild( lstMenu2 );
-
-	txtTitle = app.CreateText( "App desarrollada por Ángel Alonso",-1,-1,"Left");
-	txtTitle.SetTextColor( "#666666" );
-	txtTitle.SetMargins( 16,12,0,0, "dip" );
-	txtTitle.SetTextSize( 14, "dip" );
-	layMenu.AddChild( txtTitle );	
-
 }
 
 function lstMenu_OnTouch( title, body, type, index ) {
@@ -154,13 +147,12 @@ function lstMenu_OnTouch( title, body, type, index ) {
     title = title.replace(/Unirse a un chat temporal/gi,'unirse-chatt');
     title = title.replace(/Crear un chat permanente/gi,'crear-chatp');
     title = title.replace(/Unirse a un chat permanente/gi,'unirse-chatp');
-    title = title.replace(/Información/gi,'informacion');
     title = title.replace(/Ajustes/gi,'ajustes');
 
     if (title==="") {
         }
-        if (title==="Puntuar") {
-            app.OpenUrl('https://play.google.com/store/apps/details?id=com.alienchat')
+        if (title==="Comentar") {
+            app.OpenUrl('https://github.com/AngelAlonsoRamirez/AlienChat')
             } else {
                 web.LoadUrl( title + ".html")
                 }
